@@ -11,7 +11,7 @@ const siteContent = {
   "cta": {
     "h1": "DOM Is Awesome",
     "button": "Get Started",
-    "img-src": "img/header-img.png"
+    "img-src2": "img/header-img.png"
   },
   "main-content": {
     "features-h4":"Features",
@@ -25,6 +25,15 @@ const siteContent = {
     "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "vision-h4":"Vision",
     "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "img-src3": "img/mid-page-accent.jpg"
+  },
+  "bottom-content": {
+    "services-h4" : "Services",
+    "services-content" : "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "product-h4" : "Product",
+    "product-content" : "elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "vision-h4" : "Vision",
+    "vision-content" : "elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
   },
   "contact": {
     "contact-h4" : "Contact",
@@ -37,6 +46,61 @@ const siteContent = {
   },
 };
 
+
+let anchors = document.querySelectorAll("a");
+
+anchors[0].innerHTML = siteContent["nav"]["nav-item-1"]
+anchors[1].innerHTML = siteContent["nav"]["nav-item-2"]
+anchors[2].innerHTML = siteContent["nav"]["nav-item-3"]
+anchors[3].innerHTML = siteContent["nav"]["nav-item-4"]
+anchors[4].innerHTML = siteContent["nav"]["nav-item-5"]
+anchors[5].innerHTML = siteContent["nav"]["nav-item-6"]
+
+let headerOne = document.querySelectorAll("h1");
+
+headerOne.innerHTML = siteContent["cta"]["h1"]
+
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src2"])
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["img-src3"])
+
+let getStarted = document.querySelector("button");
+getStarted.textContent = siteContent["cta"]["button"]
+
+let domIsAwesome = document.querySelector("h1");
+domIsAwesome.textContent = siteContent["cta"]["h1"]
+
+let  textContent = document.querySelectorAll("p");
+
+textContent[0].innerHTML = siteContent["main-content"]["features-content"]
+textContent[1].innerHTML = siteContent["main-content"]["about-content"]
+textContent[2].innerHTML = siteContent["bottom-content"]["services-content"]
+textContent[3].innerHTML = siteContent["bottom-content"]["product-content"]
+textContent[4].innerHTML = siteContent["bottom-content"]["vision-content"]
+textContent[5].innerHTML = siteContent["contact"]["address"]
+textContent[6].innerHTML = siteContent["contact"]["phone"]
+textContent[7].innerHTML = siteContent["contact"]["email"]
+textContent[8].innerHTML = siteContent["footer"]["copyright"]
+
+
+
+let contentH4 = document.querySelectorAll("h4");
+
+contentH4[0].innerHTML = siteContent["main-content"]["features-h4"]
+contentH4[1].innerHTML = siteContent["main-content"]["about-h4"]
+contentH4[2].innerHTML = siteContent["bottom-content"]["services-h4"]
+contentH4[3].innerHTML = siteContent["bottom-content"]["product-h4"]
+contentH4[4].innerHTML = siteContent["bottom-content"]["vision-h4"]
+
+
+
+
+
