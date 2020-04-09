@@ -46,8 +46,9 @@ const siteContent = {
   },
 };
 
+let background = document.querySelectorAll('body');
 
-let anchors = document.querySelectorAll("a");
+let anchors = document.querySelectorAll('a');
 
 anchors[0].innerHTML = siteContent["nav"]["nav-item-1"]
 anchors[1].innerHTML = siteContent["nav"]["nav-item-2"]
@@ -55,6 +56,22 @@ anchors[2].innerHTML = siteContent["nav"]["nav-item-3"]
 anchors[3].innerHTML = siteContent["nav"]["nav-item-4"]
 anchors[4].innerHTML = siteContent["nav"]["nav-item-5"]
 anchors[5].innerHTML = siteContent["nav"]["nav-item-6"]
+
+anchors.forEach(item => {
+  item.addEventListener('mouseenter', event => {
+      event.target.style.transform = "scale(1.2)";
+      event.target.style.color = 'blue'; 
+      event.target.style.transition = "all 0.3s";
+      event.target.style.textDecoration = 'none'; 
+  })
+
+  item.addEventListener('mouseleave', event => {
+      event.target.style.transform = "scale(1.0)";
+      event.target.style.color = 'black'; 
+      event.target.style.transition = "all 0.3s";
+  })
+})
+
 
 let headerOne = document.querySelectorAll("h1");
 
@@ -75,10 +92,28 @@ middleImg.setAttribute('src', siteContent["main-content"]["img-src3"])
 let getStarted = document.querySelector("button");
 getStarted.textContent = siteContent["cta"]["button"]
 
+document.querySelectorAll('button').forEach(item => {
+  item.addEventListener('mouseenter', event => {
+    event.target.style.transform = "scale(1.2)";
+      event.target.style.color = 'blue'; 
+      event.target.style.background = 'grey'; 
+      event.target.style.transition = "all 0.3s";
+
+  })
+
+  item.addEventListener('mouseleave', event => {
+      event.target.style.color = 'black'; 
+      event.target.style.background = 'white'; 
+      event.target.style.transform = "scale(1.0)";
+  })
+})
+
 let domIsAwesome = document.querySelector("h1");
 domIsAwesome.textContent = siteContent["cta"]["h1"]
 
 let  textContent = document.querySelectorAll("p");
+
+
 
 textContent[0].innerHTML = siteContent["main-content"]["features-content"]
 textContent[1].innerHTML = siteContent["main-content"]["about-content"]
